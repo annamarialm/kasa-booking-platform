@@ -52,7 +52,6 @@ export default function Menu() {
               À propos
             </Link>
           </div>
-
           <Link href="/home" aria-label="Accueil" className="menu__logo">
             <Image
               src="/logos/logo.svg"
@@ -62,11 +61,9 @@ export default function Menu() {
               priority
             />
           </Link>
-
           <Link href="/ajout" className="menu__add-link">
             +Ajouter un logement
           </Link>
-
           <div className="menu__icons">
             <button
               type="button"
@@ -83,8 +80,8 @@ export default function Menu() {
 
             <span className="menu__separator" />
 
-            <button
-              type="button"
+            <Link
+              href="/messages"
               className="menu__icon-button"
               aria-label="Messagerie"
             >
@@ -94,8 +91,8 @@ export default function Menu() {
                 width={16}
                 height={16}
               />
-            </button>
-          </div>
+            </Link>
+          </div>{" "}
         </div>
 
         {/* MOBILE TOPBAR */}

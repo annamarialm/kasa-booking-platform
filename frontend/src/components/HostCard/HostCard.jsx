@@ -36,10 +36,8 @@ export default function HostCard({ host, rating }) {
       </div>
 
       <div className="host-card__buttons">
-        <button type="button">Contacter l’hôte</button>
-
-        <Link href="/messages" className="host-card__message-button">
-          Envoyer un message
+        <Link href="/messages" className="host-card__button">
+          Contacter l’hôte
         </Link>
       </div>
     </aside>

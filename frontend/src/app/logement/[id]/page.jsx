@@ -25,8 +25,32 @@ export default async function PropertyPage({ params }) {
 
   const property = await getProperty(resolvedParams.id);
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    name: property.title,
+    description: property.description,
+    image: property.cover,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: property.location,
+    },
+    amenityFeature:
+      property.equipments?.map((equipment) => ({
+        "@type": "LocationFeatureSpecification",
+        name: equipment,
+      })) || [],
+  };
+
   return (
     <main className="logement-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData || {}),
+        }}
+      />
+
       <div className="logement-page__container">
         <header className="logement-page__header">
           <Link href="/home" className="logement-page__back-link">

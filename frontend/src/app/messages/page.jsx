@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 import "./Messages.css";
 
 const conversations = Array.from({ length: 7 }, (_, index) => ({
@@ -61,9 +65,15 @@ const messages = [
 ];
 
 export default function MessagesPage() {
+  const [selectedConversation, setSelectedConversation] = useState(null);
+
   return (
     <main className="messages-page">
-      <section className="messages-sidebar">
+      <section
+        className={`messages-sidebar ${
+          selectedConversation ? "messages-sidebar--hidden" : ""
+        }`}
+      >
         <button type="button" className="messages-sidebar__back">
           ← Retour
         </button>
@@ -72,7 +82,12 @@ export default function MessagesPage() {
 
         <div className="messages-sidebar__list">
           {conversations.map((conversation) => (
-            <article key={conversation.id} className="conversation-card">
+            <button
+              key={conversation.id}
+              type="button"
+              className="conversation-card"
+              onClick={() => setSelectedConversation(conversation.id)}
+            >
               <div className="conversation-card__avatar" />
 
               <div className="conversation-card__content">
@@ -88,12 +103,24 @@ export default function MessagesPage() {
                   <div className="conversation-card__dot" />
                 </div>
               </div>
-            </article>
+            </button>
           ))}
         </div>
       </section>
 
-      <section className="messages-chat">
+      <section
+        className={`messages-chat ${
+          selectedConversation ? "messages-chat--visible" : ""
+        }`}
+      >
+        <button
+          type="button"
+          className="messages-chat__mobile-back"
+          onClick={() => setSelectedConversation(null)}
+        >
+          ← Retour
+        </button>
+
         <div className="messages-chat__content">
           {messages.map((message) => (
             <div
@@ -118,9 +145,15 @@ export default function MessagesPage() {
         </div>
 
         <form className="messages-input">
-          <textarea placeholder="Envoyer un message" />
+          <label htmlFor="message-input" className="sr-only">
+            Message
+          </label>
 
-          <button type="submit">↑</button>
+          <textarea id="message-input" placeholder="Envoyer un message" />
+
+          <button type="submit" aria-label="Envoyer le message">
+            ↑
+          </button>
         </form>
       </section>
     </main>

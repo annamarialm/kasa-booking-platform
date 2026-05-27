@@ -124,7 +124,7 @@
   gap: 8px;
 }
 
-.host-card button {
+.host-card__button {
   display: flex;
 
   align-items: center;
@@ -161,7 +161,7 @@
     width: 100%;
   }
 
-  .host-card button {
+  .host-card__button {
     width: 100%;
   }
 }
