@@ -1,3 +1,10 @@
+/**
+ * Displays the user login page and handles
+ * authentication with the backend API.
+ *
+ * Stores the authentication token in localStorage
+ * after a successful login.
+ */
 "use client";
 
 import { useState } from "react";
@@ -11,6 +18,12 @@ export default function LoginPage() {
 
   const [error, setError] = useState("");
 
+  /**
+   * Sends login credentials to the API
+   * and handles authentication errors.
+   *
+   * @param {React.FormEvent<HTMLFormElement>} event
+   */
   async function handleSubmit(event) {
     event.preventDefault();
 

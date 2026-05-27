@@ -1,3 +1,12 @@
+/**
+ * Displays host information for a property,
+ * including profile picture, rating and
+ * messaging access.
+ *
+ * @param {Object} props
+ * @param {Object} props.host - Host information
+ * @param {number} props.rating - Average property rating
+ */
 import Image from "next/image";
 
 import Link from "next/link";

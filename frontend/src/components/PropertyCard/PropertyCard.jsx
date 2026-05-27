@@ -1,3 +1,14 @@
+/**
+ * Displays a clickable property card with image,
+ * location, price and favorite button.
+ *
+ * The favorite button is dynamically imported on
+ * the client side to avoid hydration issues caused
+ * by localStorage usage.
+ *
+ * @param {Object} props
+ * @param {Object} props.property - Property data
+ */
 "use client";
 
 import dynamic from "next/dynamic";

@@ -1,3 +1,11 @@
+/**
+ * Displays a favorite button for a property card.
+ * Favorites are stored in localStorage to persist
+ * between browser sessions.
+ *
+ * @param {Object} props
+ * @param {string} props.propertyId - Property identifier
+ */
 "use client";
 
 import { useState } from "react";
@@ -13,6 +21,11 @@ export default function FavoriteButton({ propertyId }) {
     return storedFavorites.includes(propertyId);
   });
 
+  /**
+   * Adds or removes a property from favorites.
+   *
+   * @param {React.MouseEvent<HTMLButtonElement>} event
+   */
   function toggleFavorite(event) {
     event.preventDefault();
 

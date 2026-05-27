@@ -1,3 +1,10 @@
+/**
+ * Displays an interactive image gallery for a property.
+ * Users can navigate using buttons or keyboard arrows.
+ *
+ * @param {Object} props
+ * @param {string[]} props.images - List of property image URLs
+ */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -13,12 +20,20 @@ export default function Gallery({ images }) {
 
   const hasMultipleImages = images && images.length > 1;
 
+  /**
+   * Displays the next image in the gallery.
+   * Loops back to the first image at the end.
+   */
   function showNextImage() {
     setCurrentIndex((previousIndex) =>
       previousIndex === images.length - 1 ? 0 : previousIndex + 1,
     );
   }
 
+  /**
+   * Displays the previous image in the gallery.
+   * Loops back to the last image at the beginning.
+   */
   function showPreviousImage() {
     setCurrentIndex((previousIndex) =>
       previousIndex === 0 ? images.length - 1 : previousIndex - 1,
@@ -26,6 +41,11 @@ export default function Gallery({ images }) {
   }
 
   useEffect(() => {
+    /**
+     * Handles keyboard navigation for the gallery.
+     *
+     * @param {KeyboardEvent} event
+     */
     function handleKeyDown(event) {
       if (!hasMultipleImages) {
         return;

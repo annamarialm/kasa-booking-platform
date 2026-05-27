@@ -1,3 +1,11 @@
+/**
+ * Displays the messaging interface with
+ * responsive conversation navigation.
+ *
+ * On mobile devices, the conversation list
+ * and active chat are displayed separately
+ * for a cleaner user experience.
+ */
 "use client";
 
 import { useState } from "react";
@@ -65,6 +73,10 @@ const messages = [
 ];
 
 export default function MessagesPage() {
+  /**
+   * Stores the currently selected conversation.
+   * Used for responsive mobile navigation.
+   */
   const [selectedConversation, setSelectedConversation] = useState(null);
 
   return (

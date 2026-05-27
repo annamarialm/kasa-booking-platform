@@ -1,3 +1,10 @@
+/**
+ * Fetches a property from the API using its id.
+ *
+ * @param {string} id - Property identifier
+ * @returns {Promise<Object>} Property data
+ * @throws {Error} If the request fails
+ */
 import Image from "next/image";
 
 import Link from "next/link";
@@ -20,11 +27,21 @@ async function getProperty(id) {
   return response.json();
 }
 
+/**
+ * Displays the property detail page with gallery,
+ * host information, description and structured SEO data.
+ *
+ * @param {Object} props
+ * @param {Object} props.params - Dynamic route parameters
+ */
 export default async function PropertyPage({ params }) {
   const resolvedParams = await params;
 
   const property = await getProperty(resolvedParams.id);
 
+  /**
+   * Structured data used for SEO and search engine indexing.
+   */
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",

@@ -1,3 +1,12 @@
+/**
+ * Unit tests for the Gallery component.
+ *
+ * Verifies:
+ * - initial image rendering
+ * - next and previous navigation
+ * - carousel looping behavior
+ * - hidden controls for a single image
+ */
 import React from "react";
 
 import { render, screen } from "@testing-library/react";

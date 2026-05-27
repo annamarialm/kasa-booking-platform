@@ -1,3 +1,11 @@
+/**
+ * Unit tests for the FavoriteButton component.
+ *
+ * Verifies:
+ * - adding favorites
+ * - removing favorites
+ * - restoring favorites from localStorage
+ */
 import React from "react";
 
 import { render, screen } from "@testing-library/react";
