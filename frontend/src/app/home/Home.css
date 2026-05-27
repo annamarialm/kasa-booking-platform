@@ -1,0 +1,25 @@
+.home-page {
+  padding: 40px 0 64px;
+}
+
+.home-page .container {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 64px;
+}
+
+.home-loading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 60vh;
+
+  font-size: 18px;
+
+  color: var(--color-primary);
+}

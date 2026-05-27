@@ -1,0 +1,15 @@
+.property-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .property-grid {
+    grid-template-columns: 1fr;
+  }
+}
