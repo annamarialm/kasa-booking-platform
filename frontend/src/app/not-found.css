@@ -1,0 +1,93 @@
+.not-found-page {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 70vh;
+
+  padding: 40px 20px;
+}
+
+.not-found-page__content {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.not-found-page__title {
+  font-size: 120px;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  color: #99331a;
+}
+
+.not-found-page__text {
+  max-width: 320px;
+
+  margin-top: 24px;
+
+  font-size: 16px;
+
+  line-height: 143%;
+
+  color: #000000;
+}
+
+.not-found-page__actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin-top: 32px;
+}
+
+.not-found-page__button {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 124px;
+
+  height: 40px;
+
+  border-radius: 10px;
+
+  background-color: #99331a;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: opacity 0.2s ease;
+}
+
+.not-found-page__button:hover {
+  opacity: 0.9;
+}
+
+@media screen and (max-width: 768px) {
+  .not-found-page__title {
+    font-size: 96px;
+  }
+
+  .not-found-page__text {
+    font-size: 14px;
+  }
+}

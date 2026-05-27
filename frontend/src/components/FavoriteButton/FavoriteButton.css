@@ -1,0 +1,41 @@
+.property-card__favorite-button {
+  position: absolute;
+
+  top: 16px;
+
+  right: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 32px;
+
+  height: 32px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background-color: #f5f5f5;
+
+  cursor: pointer;
+
+  z-index: 2;
+}
+
+.property-card__favorite-button img {
+  width: 16px;
+
+  height: 16px;
+}
+
+.property-card__favorite-button--active {
+  background-color: #99331a;
+}
+
+.property-card__favorite-button--active img {
+  filter: brightness(0) invert(1);
+}
