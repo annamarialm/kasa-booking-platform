@@ -1,16 +1,8 @@
-/**
- * Base API URL used for backend requests.
- */
+/*
 const API_URL = "http://localhost:3000/api";
 
 export default API_URL;
 
-/**
- * Fetches all available properties from the API.
- *
- * @returns {Promise<Object[]>} List of properties
- * @throws {Error} If the request fails
- */
 export async function getProperties() {
   const response = await fetch(`${API_URL}/properties`);
 
@@ -19,4 +11,23 @@ export async function getProperties() {
   }
 
   return response.json();
+}
+*/
+
+/**
+ * Mocked property data used for frontend deployment.
+ */
+import properties from "@/data/properties.json";
+
+const API_URL = "mocked-data";
+
+export default API_URL;
+
+/**
+ * Returns all properties.
+ *
+ * @returns {Promise<Array>}
+ */
+export async function getProperties() {
+  return properties;
 }

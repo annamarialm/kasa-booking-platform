@@ -1,9 +1,11 @@
 /**
- * Fetches a property from the API using its id.
+ * Displays the property detail page with gallery,
+ * host information, description and structured SEO data.
  *
- * @param {string} id - Property identifier
- * @returns {Promise<Object>} Property data
- * @throws {Error} If the request fails
+ * Uses mocked local data for frontend deployment.
+ *
+ * @param {Object} props
+ * @param {Object} props.params - Dynamic route parameters
  */
 import Image from "next/image";
 
@@ -13,27 +15,27 @@ import Gallery from "@/components/Gallery/Gallery";
 
 import HostCard from "@/components/HostCard/HostCard";
 
+import properties from "@/data/properties.json";
+
 import "./Logement.css";
 
+/**
+ * Returns a property using mocked local data.
+ *
+ * @param {string} id - Property identifier
+ * @returns {Promise<Object>} Property data
+ * @throws {Error} If the property does not exist
+ */
 async function getProperty(id) {
-  const response = await fetch(`http://127.0.0.1:3000/api/properties/${id}`, {
-    cache: "no-store",
-  });
+  const property = properties.find((item) => item.id === id);
 
-  if (!response.ok) {
+  if (!property) {
     throw new Error("Impossible de récupérer le logement");
   }
 
-  return response.json();
+  return property;
 }
 
-/**
- * Displays the property detail page with gallery,
- * host information, description and structured SEO data.
- *
- * @param {Object} props
- * @param {Object} props.params - Dynamic route parameters
- */
 export default async function PropertyPage({ params }) {
   const resolvedParams = await params;
 
