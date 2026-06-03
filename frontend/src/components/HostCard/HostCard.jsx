@@ -21,12 +21,11 @@ export default function HostCard({ host, rating }) {
   return (
     <aside className="host-card">
       <h2 className="host-card__title">Votre hôte</h2>
-
       <div className="host-card__profile">
         <div className="host-card__profile-left">
           <Image
             src={host.picture}
-            alt={host.name}
+            alt=""
             width={81}
             height={82}
             className="host-card__avatar"
@@ -43,12 +42,15 @@ export default function HostCard({ host, rating }) {
           <span>{rating}</span>
         </div>
       </div>
-
       <div className="host-card__buttons">
-        <Link href="/messages" className="host-card__button">
+        <Link
+          href="/messages"
+          className="host-card__button"
+          aria-label="Contacter l’hôte"
+        >
           Contacter l’hôte
         </Link>
-      </div>
+      </div>{" "}
     </aside>
   );
 }

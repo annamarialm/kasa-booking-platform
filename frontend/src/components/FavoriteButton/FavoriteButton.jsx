@@ -59,7 +59,13 @@ export default function FavoriteButton({ propertyId }) {
       onClick={toggleFavorite}
       aria-label={isFavorite ? "Retirer des favoris" : "Ajouter aux favoris"}
     >
-      <Image src="/icons/favorite.svg" alt="" width={16} height={16} />
+      <Image
+        src="/icons/favorite.svg"
+        alt="Favorite icon"
+        width={16}
+        height={16}
+        focusable="false"
+      />
     </button>
   );
 }

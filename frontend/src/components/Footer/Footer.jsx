@@ -11,7 +11,7 @@ export default function Footer() {
         <Link href="/home" className="footer__logo" aria-label="Accueil">
           <Image
             src="/logos/house-logo.svg"
-            alt="Kasa"
+            alt="Logo Kasa - retour accueil"
             width={46}
             height={53}
           />

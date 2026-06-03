@@ -35,7 +35,7 @@ export default function PropertyCard({ property }) {
 
           <Image
             src={property.cover}
-            alt={property.title}
+            alt=""
             width={400}
             height={300}
             className="property-card__image"

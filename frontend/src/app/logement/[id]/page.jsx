@@ -72,14 +72,18 @@ export default async function PropertyPage({ params }) {
 
       <div className="logement-page__container">
         <header className="logement-page__header">
-          <Link href="/home" className="logement-page__back-link">
+          <Link
+            href="/"
+            className="logement-page__back-link"
+            aria-label="Retour aux annonces"
+          >
+            {" "}
             <Image
               src="/icons/Property 1=back.svg"
               alt=""
               width={16}
               height={16}
             />
-
             <span>Retour aux annonces</span>
           </Link>
         </header>
